@@ -21,11 +21,9 @@ const handleClick = (ramen) => {
     }
   )})
 };
-// take id and set img url to id
-
 
 const addSubmitListener = () => {
-  console.log('hi, I loaded :)')
+  // console.log('hi, I loaded :)')
   document.querySelector("#new-ramen").addEventListener("submit", event => {
     event.preventDefault();
     let ramenName = event.target.name.value;
