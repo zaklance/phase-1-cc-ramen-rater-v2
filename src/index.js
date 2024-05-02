@@ -1,7 +1,7 @@
 // index.js
 
 // Callbacks
-const handleClick = (ramen) => {
+const handleClick = () => {
   const ramenMenu = document.querySelector('#ramen-menu');
   ramenMenu.addEventListener('click', event => {
     console.log("The user clicked on '" + event.target.id + "'.");
@@ -23,7 +23,6 @@ const handleClick = (ramen) => {
 };
 
 const addSubmitListener = () => {
-  // console.log('hi, I loaded :)')
   document.querySelector("#new-ramen").addEventListener("submit", event => {
     event.preventDefault();
     let ramenName = event.target.name.value;
@@ -59,8 +58,8 @@ const displayRamens = () => {
   const ramenMenu = document.querySelector('#ramen-menu');
   data.forEach(ramen => {
     const img = document.createElement('img');
-    img.src = `${ramen.image}`;
-    img.id = `${ramen.id}`;
+    img.src = ramen.image;
+    img.id = ramen.id;
     ramenMenu.append(img);
   });
 });
@@ -68,7 +67,6 @@ const displayRamens = () => {
 
 const main = () => {
   document.addEventListener('DOMContentLoaded', () => displayRamens() + handleClick() + addSubmitListener());
-  // Invoke addSubmitListener here
 }
 
 main()
